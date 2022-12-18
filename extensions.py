@@ -13,7 +13,7 @@ class Converter:
     def get_price(base, quote, amount):
         res = base + quote
         kurs = requests.get('https://currate.ru/api/?get=rates&pairs=' + res + '&key=' + api_key_kurs).json()
-        if kurs['status'] == 500:
+        if kurs['status'] == '500':
             return False
         else:
            return float(kurs['data'][res]) * amount
