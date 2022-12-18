@@ -12,7 +12,7 @@ def start_message(message):
 
 @bot.message_handler(commands=['help'])
 def start_message(message):
-    bot.send_message(message.chat.id, "Пример ввода валют\nUSD RUB 100\nUSD(имя валюты, курс которой хотите узнать)\nRUB(имя валюты, в которой надо узнать курс)\n100(количество валюты)\n/help - Помощь в использовании бота\n/values - Вывод всех доступных валют")
+    bot.send_message(message.chat.id, "Пример ввода валют:\nUSD RUB 100\nUSD(имя валюты, курс которой хотите узнать)\nRUB(имя валюты, в которой надо узнать курс)\n100(количество валюты)\n/help - Помощь в использовании бота\n/values - Вывод всех доступных валют")
 
 @bot.message_handler(commands=['values'])
 def handler_message(message):
