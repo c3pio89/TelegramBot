@@ -7,12 +7,12 @@ bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, "Вас приветствует БОТ конвертер валют")
+    bot.send_message(message.chat.id, "Вас приветствует БОТ конвертер валют\nВведите /help для инструкций пользования БОТом")
 
 
 @bot.message_handler(commands=['help'])
 def start_message(message):
-    bot.send_message(message.chat.id, "Шаблон ввода валют\nUSD RUB 100\n/start - Запуск бота\n/help - Помощь в испльзовании бота\n/values - Вывод всех доступных валют")
+    bot.send_message(message.chat.id, "Шаблон ввода валют\nUSD RUB 100\n/help - Помощь в использовании бота\n/values - Вывод всех доступных валют")
 
 @bot.message_handler(commands=['values'])
 def handler_message(message):
@@ -25,7 +25,7 @@ def handler_message(message):
         c = str(i) + ") " + str(a) + "-" + str(b)
         str_res += "\n" + c
         i += 1
-    bot.send_message(message.chat.id, "Валюты доступные для конвертации\n" + str_res[1:])
+    bot.send_message(message.chat.id, "Валюты доступные для конвертации\n" + str_res[1:] + "\n/help - Помощь в использовании бота")
 
 
 @bot.message_handler(regexp="[a-zA-Z]{3} [a-zA-Z]{3} -?[0-9]+")
